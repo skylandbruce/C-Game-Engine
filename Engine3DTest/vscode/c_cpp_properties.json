@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Engine3DTest",
+            "includePath": [
+                // "${workspaceFolder}\\**",
+                "${workspaceFolder}/proj/**",
+                // "${workspaceFolder}\\proj\\include3D\\**",
+                // "${workspaceFolder}\\proj\\include3D\\objects\\core",
+                // "${workspaceFolder}\\proj\\include3D\\objects\\meta",
+                // "${workspaceFolder}\\proj\\include3D\\manager\\core",
+                // "${workspaceFolder}\\proj\\include3D\\instantiate\\core",
+                // "${workspaceFolder}\\proj\\include3D\\buffer",
+                // "${workspaceFolder}\\proj\\include3D\\service\\stream\\core",
+                // "${workspaceFolder}\\proj\\include3D\\service\\core"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            // "compilerPath": "",
+            "windowsSdkVersion": "10.0.22621.0",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}

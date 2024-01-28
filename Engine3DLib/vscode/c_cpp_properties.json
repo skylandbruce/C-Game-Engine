@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Engine3DLib",
+            "includePath": [
+                // "${workspaceFolder}\\**",
+                "${workspaceFolder}\\engine3D\\**",
+                // "${workspaceFolder}\\engine3D\\buffer",
+                // "${workspaceFolder}\\engine3D\\instantiate\\core",
+                // "${workspaceFolder}\\engine3D\\manager\\core",
+                // "${workspaceFolder}\\engine3D\\objects\\core",
+                // "${workspaceFolder}\\engine3D\\objects\\meta",
+                // "${workspaceFolder}\\engine3D\\service\\core",
+                // "${workspaceFolder}\\engine3D\\service\\stream\\core"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            // "compilerPath": "",
+            "windowsSdkVersion": "10.0.22621.0",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,94 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "export Header xcopy",
+			"type": "cppbuild",
+			"command": "cmd.exe",
+			"args": [
+					  "/C",
+			  "xcopy /E /I /Y ${workspaceFolder}\\engine3D ${workspaceFolder}\\include3D /EXCLUDE:exclude.txt",  
+			],
+			"group": {
+			  "kind": "build",
+			  "isDefault": false
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}			
+		},		
+		{
+			"label": "clear Objs",
+			"type": "cppbuild",
+			"command": "cmd.exe",
+			"args": [
+				"/C",
+				"del obj\\*.obj",
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			}
+		},		
+		{
+			"type": "cppbuild",
+			"label": "compile Library",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				// "/utf-8",
+				// "/bigobj",
+				// "/showIncludes",
+				// "/TP",
+				"/c",
+				"/Fo${workspaceFolder}/obj\\",
+				"instantiate\\core\\*.cpp",
+				"manager\\core\\*.cpp",
+				"objects\\meta\\*.cpp",
+				"objects\\core\\*.cpp",
+				"buffer\\*.cpp",
+				"service\\core\\*.cpp",
+				"service\\stream\\core\\*.cpp",
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/engine3D"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"detail": "compiler: cl.exe",	
+			"dependsOn": "clear Objs"
+		},
+		{
+			"type": "cppbuild",
+			"label": "build Library",
+			"command": "lib.exe",
+			"args": [
+				"/NOLOGO",
+				"/OUT:build\\Library.lib",
+				"obj\\*.obj"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"detail": "compiler: lib.exe",
+			"dependsOn": "compile Library"
+		},
+	]
+}
